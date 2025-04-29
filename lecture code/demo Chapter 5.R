@@ -29,9 +29,12 @@ Yt = c(Yt, 2*Yt[i-1] - Yt[i-2] + et[j] - theta1*et[j-1] - theta2*et[j-2] )
 plot(Yt)
 acf(Yt)
 acf(Yt,lag=50)
+# first difference
 plot(diff(Yt),type='l')
 acf(diff(Yt))
 acf(diff(Yt),lag=50)
+
+# sec difference
 plot(diff(Yt,2),type='l')## incorrect difference
 acf(diff(Yt,2),lag=50) ## incorrect difference
 plot(diff(diff(Yt)),type='l')
@@ -39,7 +42,6 @@ acf(diff(diff(Yt)))
 acf(diff(Yt,differences =2))
 
 ## electricity data
-
 data(electricity)
 plot(electricity,ylab='electricity')
 BoxCox.ar(electricity)
